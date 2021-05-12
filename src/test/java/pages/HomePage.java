@@ -10,8 +10,15 @@ import org.testng.Assert;
 public class HomePage {
 WebDriver driver;
 
-@FindBy(id = "home")
+@FindBy(id = "home1")
 private WebElement homeText;
+
+@FindBy(id="Home")
+private WebElement homeOption;
+
+@FindBy(id ="menuButton")
+private WebElement menuButton;
+
 
 public HomePage(WebDriver driver) {
 	this.driver = driver;
@@ -21,6 +28,17 @@ public HomePage(WebDriver driver) {
 
 public void assertHomeText() {
 	Assert.assertEquals(homeText.getText(), "Home");
+	
+}
+
+
+public void assertMenuIsVisible() {
+	Assert.assertEquals(homeOption.getText(), "Home");
+	
+}
+
+public void clickMenuButton() {
+	menuButton.click();
 	
 }
 }
