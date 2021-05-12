@@ -1,5 +1,6 @@
 
 @All
+@Home
 Feature: Home page
 
 @TC_home_01
