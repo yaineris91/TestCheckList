@@ -16,7 +16,7 @@ Scenario Outline: Add clasification
 Given: open the application on the browser
 When click on the menu button
 And click on the clasification option
-And click on the add clasification button
+And click on the new clasification button
 And enter the "<clasificationName>"
 And click on the save button
 Then The application should show a "<message>" to the user
@@ -25,8 +25,10 @@ Then The application should show the clasification on the list
 Examples: 
       |clasificationName  |message              | 
       |clasificationName1 |massageClasification1|
+      |clasificationName2 |massageClasification1|
       |clasificationName3 |massageClasification1|
       |clasificationName4 |massageClasification1|
+      |clasificationName5 |massageClasification1|
       
       
 @TC_clasification_03

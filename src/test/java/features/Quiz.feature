@@ -24,9 +24,9 @@ Then The application should show the quiz on the list
 
 Examples: 
     |question  |clasificationName   |message     | 
-    |question1 |clasificationName1  |massageQuiz1|
-    |question2 |clasificationName3  |massageQuiz1|
-    |question3 |clasificationName4  |massageQuiz1|
+    |question1 |clasificationName2  |massageQuiz1|
+    |question2 |clasificationName2  |massageQuiz1|
+    |question3 |clasificationName2  |massageQuiz1|
       
       
 @TC_quiz_03
@@ -42,7 +42,7 @@ Then The application should edit "<question>" and "<clasificationName>" on the l
 
 Examples: 
     |question  |clasificationName   |message     | 
-    |question1 |clasificationName1  |massageQuiz1|
+    |question4 |clasificationName1  |massageQuiz1|
       
       
 @TC_quiz_04
@@ -50,12 +50,12 @@ Scenario Outline: Remove quiz
 Given: open the application on the browser
 When click on the menu button
 And click on the quiz option
-And select the "<id>"
+And select the "<question>"
 And click on the remove project button
 And click on the yes option
 Then The application should show a "<message>" to the user
 Then The application should remove the quiz of the list
 
 Examples: 
-      |id         | message       |
-      |questionId |massageProject3|
+      |question   | message    |
+      |questionId |massageQuiz3|
