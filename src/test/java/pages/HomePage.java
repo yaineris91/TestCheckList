@@ -19,6 +19,9 @@ private WebElement homeOption;
 @FindBy(id ="menuButton")
 private WebElement menuButton;
 
+@FindBy(id ="Proyectos")
+private WebElement proyjectOption;
+
 
 public HomePage(WebDriver driver) {
 	this.driver = driver;
@@ -31,14 +34,8 @@ public void assertHomeText() {
 	
 }
 
-
-public void assertMenuIsVisible() {
-	Assert.assertEquals(homeOption.getText(), "Home");
-	
-}
-
-public void clickMenuButton() {
-	menuButton.click();
+public void clickProjectOption() {
+	proyjectOption.click();
 	
 }
 }

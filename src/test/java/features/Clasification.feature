@@ -6,16 +6,14 @@ Feature: Clasification page
 @TC_clasification_01
 Scenario: Open Clasification page
 Given: open the application on the browser
-When click on the menu button
-And click on the clasification option
+When click on the clasification option
 Then The application should be open on the Clasification page
 
 
 @TC_clasification_02
 Scenario Outline: Add clasification
 Given: open the application on the browser
-When click on the menu button
-And click on the clasification option
+When click on the clasification option
 And click on the new clasification button
 And enter the "<clasificationName>"
 And click on the save button
@@ -34,8 +32,7 @@ Examples:
 @TC_clasification_03
 Scenario Outline: Edit clasification
 Given: open the application on the browser
-When click on the menu button
-And click on the clasification option
+When click on the clasification option
 And click on the edit clasification option
 And edit the "<clasificationName>"
 And click on the save button
@@ -50,8 +47,7 @@ Examples:
 @TC_clasification_04
 Scenario Outline: Remove clasification
 Given: open the application on the browser
-When click on the menu button
-And click on the clasification option
+When click on the clasification option
 And select the "<clasificationName>"
 And click on the remove clasification button
 And click on the yes option

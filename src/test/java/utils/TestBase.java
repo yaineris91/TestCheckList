@@ -29,7 +29,7 @@ public class TestBase {
 
 		if (BROWSER.equalsIgnoreCase("Chrome")) {
 
-			WebDriverManager.chromedriver().version("90.0").setup();
+			WebDriverManager.chromedriver().version("91.0").setup();
 			ArrayList<String> optionsList = new ArrayList<String>();
 			chromeOptions = new ChromeOptions();
 			optionsList.add("--start-maximized");
