@@ -19,6 +19,8 @@ And click on the new project button
 And enter the "<projectName>"
 And click on the save button
 Then The application should show a "<message>" to the user
+Then The application should show the "<projectName>" on the list 
+
 
 
 Examples: 
@@ -32,15 +34,15 @@ Examples:
 Scenario Outline: Edit project 
 Given: open the application on the browser
 When click on the project option
-And click on the edit project option
-And edit the "<projectName>"
+And click on the edit project option with "<projectName>"
+And edit whit the "<newName>"
 And click on the save button
 Then The application should show a "<message>" to the user
-Then The application should edit "<projectName>" on the list 
+Then The application should show the "<newName>" on the list 
 
 Examples: 
-      |projectName  | message       |
-      |projectName2 |massageProject2|
+    | newName       |projectName  | message       |
+    | projectName2  |projectName1 |massageProject2|
       
       
 @TC_project_04

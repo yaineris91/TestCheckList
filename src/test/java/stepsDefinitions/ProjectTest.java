@@ -46,35 +46,27 @@ public class ProjectTest extends TestBase{
 		Thread.sleep(2000);
 	    project.assertTheApplicationShowAMessage(projectMessage);
 	}
+	
 
-	@Then("The application should show the project on the list")
-	public void the_application_should_show_the_project_on_the_list() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	@When("edit whit the {string}")
+	public void edit_with_the(String name) {
+		String projectName= p.getProperty(name);
+       project.editProjectName(projectName);
+       
 	}
-
-	@When("click on the edit project option")
-	public void click_on_the_edit_project_option() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	@Then("The application should show the {string} on the list")
+	public void the_application_should_show_the_on_the_list(String name) {
+		String projectName= p.getProperty(name);
+		project.assertTheProjectIdEditedCorrectly(projectName);
 	}
-
-	@When("edit the {string}")
-	public void edit_the(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
-	}
-
-	@Then("The application should edit {string} on the list")
-	public void the_application_should_edit_on_the_list(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
-	}
-
-	@When("select the {string}")
-	public void select_the(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	
+	
+	@When("click on the edit project option with {string}")
+	public void click_on_the_edit_project_option_with(String name) throws InterruptedException {
+		String projectName= p.getProperty(name);
+		Thread.sleep(2000);
+	   project.selectProjectAnClickEditButton(projectName);
+	   Thread.sleep(2000);
 	}
 
 	@When("click on the remove project button")

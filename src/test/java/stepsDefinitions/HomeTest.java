@@ -3,7 +3,6 @@ package stepsDefinitions;
 import java.util.Properties;
 
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import pages.HomePage;
 import utils.PropertyHelper;
 import utils.TestBase;
