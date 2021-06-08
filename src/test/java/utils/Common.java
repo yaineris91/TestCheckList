@@ -11,9 +11,9 @@ public class Common {
 	
 
 	
-	public static void searchElementOnTheTableAndClickOnTheButton(String name, String buttonId, WebDriver driver) {
+	public static void searchElementOnTheTableAndClickOnTheButton(String name, String buttonId, String tableXpath, WebDriver driver ) {
 		boolean stop=false;
-		WebElement table = driver.findElement(By.xpath("//*[@id=\"projecttable\"]/div[2]/table/tbody"));
+		WebElement table = driver.findElement(By.xpath(tableXpath));
 		 List<WebElement> allrows = table.findElements(By.tagName("tr"));
 		for(WebElement row: allrows){
 			List<WebElement> cells = row.findElements(By.tagName("td"));	
@@ -38,9 +38,9 @@ public class Common {
 	
 	
 	
-	public static boolean elementIsPresentOnTheTable(String name, WebDriver driver) {
+	public static boolean elementIsPresentOnTheTable(String name,String tableXpath, WebDriver driver) {
 		boolean stop=false;
-		WebElement table = driver.findElement(By.xpath("//*[@id=\"projecttable\"]/div[2]/table/tbody"));
+		WebElement table = driver.findElement(By.xpath(tableXpath));
 		 List<WebElement> allrows = table.findElements(By.tagName("tr"));
 		for(WebElement row: allrows){
 			 List<WebElement> cells = row.findElements(By.tagName("td"));

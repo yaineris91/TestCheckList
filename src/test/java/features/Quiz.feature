@@ -14,11 +14,11 @@ Then The application should be open on the Quiz page
 Scenario Outline: Add Quiz
 Given: open the application on the browser
 When click on the quiz option
-And click on the new project button
+And click on the new quiz button
 And enter the "<question>" and "<clasificationName>"
 And click on the save button
 Then The application should show a "<message>" to the user
-Then The application should show the quiz on the list
+Then The application should show the "<question>" on the list
 
 Examples: 
     |question  |clasificationName   |message     | 
@@ -47,10 +47,10 @@ Scenario Outline: Remove quiz
 Given: open the application on the browser
 When click on the quiz option
 And select the "<question>"
-And click on the remove project button
+And click on the remove quiz button
 And click on the yes option
 Then The application should show a "<message>" to the user
-Then The application should remove the quiz of the list
+Then The application should remove the "<question>" of the list
 
 Examples: 
       |question   | message    |

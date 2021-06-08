@@ -24,6 +24,12 @@ private WebElement menuButton;
 @FindBy(id ="Proyectos")
 private WebElement proyjectOption;
 
+@FindBy(id ="Clasificaciones")
+private WebElement clasificationOption;
+
+@FindBy(id ="Preguntas")
+private WebElement quizOption;
+
 
 public HomePage(WebDriver driver) {
 	this.driver = driver;
@@ -38,6 +44,19 @@ public void assertHomeText() {
 
 public void clickProjectOption() {
 	proyjectOption.click();
+	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+}
+
+public void clickClasificationOption() {
+	clasificationOption.click();
+	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+}
+
+
+public void clickQuizOption() {
+	quizOption.click();
 	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 }

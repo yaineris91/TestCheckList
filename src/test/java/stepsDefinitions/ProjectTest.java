@@ -59,7 +59,7 @@ public class ProjectTest extends TestBase{
 	public void the_application_should_show_the_on_the_list(String name) throws InterruptedException {
 		String projectName= p.getProperty(name);
 		 Thread.sleep(1000);
-		project.assertTheProjectIsEditedCorrectly(projectName);
+		project.assertTheProjectIsOnTheTable(projectName);
 	}
 	
 	
@@ -67,7 +67,7 @@ public class ProjectTest extends TestBase{
 	public void click_on_the_edit_project_option_with(String name) throws InterruptedException {
 		String projectName= p.getProperty(name);
       Thread.sleep(5000);
-	   project.selectProjectAnClickEditButton(projectName);
+	   project.selectProjectAndClickEditButton(projectName);
 	   
 
 	}
@@ -83,7 +83,7 @@ public class ProjectTest extends TestBase{
 	public void click_on_the_remove_project_option_with(String name) throws InterruptedException {
 		String projectName= p.getProperty(name);
 		 Thread.sleep(5000);
-	   project.selectProjectAnClickDeleteButton(projectName);
+	   project.selectProjectAndClickDeleteButton(projectName);
 	   driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	}
 

@@ -16,23 +16,17 @@ public class ProjectPage {
 	WebDriver driver;
 	@FindBy(id = "newproject")
 	private WebElement newButton;
-	
-	@FindBy(id = "editproject")
-	private WebElement editButton;
-	
-	@FindBy(id = "removeproject")
-	private WebElement removeButton;
-	
+
 	@FindBy(id = "confirmDelete")
 	private WebElement removeTableButton;
 	
 	@FindBy(id = "name")
 	private WebElement nameTextField;
 	
-	@FindBy(id = "saveproject")
+	@FindBy(id = "save")
 	private WebElement saveOption;
 	
-	@FindBy(id = "cancelproject")
+	@FindBy(id = "cancel")
 	private WebElement cancelOption;
 	
 	@FindBy(id = "titleTable")
@@ -86,13 +80,13 @@ public class ProjectPage {
 	
 	
 	
-	public void selectProjectAnClickEditButton(String projectName) {
-		Common.searchElementOnTheTableAndClickOnTheButton(projectName, "editButton", driver);
+	public void selectProjectAndClickEditButton(String projectName) {
+		Common.searchElementOnTheTableAndClickOnTheButton(projectName, "editButton","//*[@id=\"projecttable\"]/div[2]/table/tbody", driver);
 		 
 	}
 	
-	public void selectProjectAnClickDeleteButton(String projectName) {
-		Common.searchElementOnTheTableAndClickOnTheButton(projectName, "deleteButton", driver);
+	public void selectProjectAndClickDeleteButton(String projectName) {
+		Common.searchElementOnTheTableAndClickOnTheButton(projectName, "deleteButton","//*[@id=\"projecttable\"]/div[2]/table/tbody",  driver);
 		   
 	}
 	
@@ -101,13 +95,13 @@ public class ProjectPage {
 		nameTextField.sendKeys(newProjectName);
 	}
 	
-	public void assertTheProjectIsEditedCorrectly(String projectName) {
-		Assert.assertEquals(Common.elementIsPresentOnTheTable( projectName, driver), true);
+	public void assertTheProjectIsOnTheTable(String projectName) {
+		Assert.assertEquals(Common.elementIsPresentOnTheTable( projectName,"//*[@id=\"projecttable\"]/div[2]/table/tbody",  driver), true);
 		
 	}
 	
 	public void assertTheProjectIsRemovedCorrectly(String projectName) {
-		Assert.assertEquals(Common.elementIsPresentOnTheTable( projectName, driver), false);
+		Assert.assertEquals(Common.elementIsPresentOnTheTable( projectName,"//*[@id=\"projecttable\"]/div[2]/table/tbody",  driver), false);
 		
 	}
 	
