@@ -49,12 +49,13 @@ Examples:
 Scenario Outline: Remove project 
 Given: open the application on the browser
 When click on the project option
-And select the "<projectName>"
-And click on the remove project button
+And click on the remove project option with "<projectName>"
 And click on the yes option
 Then The application should show a "<message>" to the user
-Then The application should remove the project of the list
+Then The application should remove the "<projectName>" of the list
 
 Examples: 
-      |projectName  | message|
-      |projectName3 |massageProject3|
+   |projectName   |message        | 
+   |projectName2  |massageProject3|
+   |projectName3  |massageProject3|
+   |projectName4  |massageProject3|

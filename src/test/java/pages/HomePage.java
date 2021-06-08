@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,6 +38,7 @@ public void assertHomeText() {
 
 public void clickProjectOption() {
 	proyjectOption.click();
-	
+	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
 }
 }

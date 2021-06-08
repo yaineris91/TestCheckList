@@ -1,8 +1,9 @@
 package pages;
 
-import java.util.List;
 
-import org.openqa.selenium.By;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,6 +41,9 @@ public class ProjectPage {
 	@FindBy(id = "toast")
 	private WebElement messageTest;
 	
+	@FindBy(id = "yes1")
+	private WebElement yesOption;
+	
 	public ProjectPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
@@ -70,6 +74,13 @@ public class ProjectPage {
 	
 	public void clickSaveButton() {
 		saveOption.click();
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		
+	}
+	
+	public void clickYesOption() {
+		yesOption.click();
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		
 	}
 	
@@ -77,6 +88,12 @@ public class ProjectPage {
 	
 	public void selectProjectAnClickEditButton(String projectName) {
 		Common.searchElementOnTheTableAndClickOnTheButton(projectName, "editButton", driver);
+		 
+	}
+	
+	public void selectProjectAnClickDeleteButton(String projectName) {
+		Common.searchElementOnTheTableAndClickOnTheButton(projectName, "deleteButton", driver);
+		   
 	}
 	
 	public void editProjectName(String newProjectName) {
@@ -84,8 +101,13 @@ public class ProjectPage {
 		nameTextField.sendKeys(newProjectName);
 	}
 	
-	public void assertTheProjectIdEditedCorrectly(String projectName) {
+	public void assertTheProjectIsEditedCorrectly(String projectName) {
 		Assert.assertEquals(Common.elementIsPresentOnTheTable( projectName, driver), true);
+		
+	}
+	
+	public void assertTheProjectIsRemovedCorrectly(String projectName) {
+		Assert.assertEquals(Common.elementIsPresentOnTheTable( projectName, driver), false);
 		
 	}
 	

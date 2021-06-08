@@ -1,6 +1,7 @@
 package stepsDefinitions;
 
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -43,7 +44,7 @@ public class ProjectTest extends TestBase{
 	@Then("The application should show a {string} to the user")
 	public void the_application_should_show_a_to_the_user(String message) throws InterruptedException {
 		String projectMessage= p.getProperty(message);
-		Thread.sleep(2000);
+		  Thread.sleep(1000);
 	    project.assertTheApplicationShowAMessage(projectMessage);
 	}
 	
@@ -55,35 +56,40 @@ public class ProjectTest extends TestBase{
        
 	}
 	@Then("The application should show the {string} on the list")
-	public void the_application_should_show_the_on_the_list(String name) {
+	public void the_application_should_show_the_on_the_list(String name) throws InterruptedException {
 		String projectName= p.getProperty(name);
-		project.assertTheProjectIdEditedCorrectly(projectName);
+		 Thread.sleep(1000);
+		project.assertTheProjectIsEditedCorrectly(projectName);
 	}
 	
 	
 	@When("click on the edit project option with {string}")
 	public void click_on_the_edit_project_option_with(String name) throws InterruptedException {
 		String projectName= p.getProperty(name);
-		Thread.sleep(2000);
+      Thread.sleep(5000);
 	   project.selectProjectAnClickEditButton(projectName);
-	   Thread.sleep(2000);
+	   
+
 	}
 
-	@When("click on the remove project button")
-	public void click_on_the_remove_project_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
-	}
+	
 
 	@When("click on the yes option")
 	public void click_on_the_yes_option() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	    project.clickYesOption();
 	}
 
-	@Then("The application should remove the project of the list")
-	public void the_application_should_remove_the_project_of_the_list() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	@When("click on the remove project option with {string}")
+	public void click_on_the_remove_project_option_with(String name) throws InterruptedException {
+		String projectName= p.getProperty(name);
+		 Thread.sleep(5000);
+	   project.selectProjectAnClickDeleteButton(projectName);
+	   driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+	}
+
+	@Then("The application should remove the {string} of the list")
+	public void the_application_should_remove_the_of_the_list(String name) {
+		String projectName= p.getProperty(name);
+		project.assertTheProjectIsRemovedCorrectly(projectName);
 	}
 }
