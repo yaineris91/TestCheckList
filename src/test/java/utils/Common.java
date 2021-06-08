@@ -23,8 +23,6 @@ public class Common {
 			     	     	stop=true;
 			     	    	edit.click();
 			     	       break;
-			     	    }else{
-			     	        System.out.println("The element with "+name+" is not available on this cell");
 			     	    }
 			         
 			        }
@@ -48,9 +46,6 @@ public class Common {
 	     	    if(cell.getText().equals(name)){
 	     	    	stop=true;
 		     	       break;
-	     	    	
-	     	    }else{
-	     	        System.out.println("The element with "+name+" is not available on this table cell");
 	     	    }
 	         
 	        }

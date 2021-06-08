@@ -25,6 +25,9 @@ Examples:
       |clasificationName1 |massageClasification1|
       |clasificationName3 |massageClasification1|
       |clasificationName4 |massageClasification1|
+      |clasificationName5 |massageClasification1|
+      |clasificationName6 |massageClasification1|
+    
  
       
       

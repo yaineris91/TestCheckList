@@ -17,7 +17,7 @@ import utils.TestBase;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src//test//java//features", glue = { "stepsDefinitions", "utils" }, plugin = {
 		"html:target/site/cucumber-pretty","json:target/cucumber.json"}, monochrome = true, strict = true, dryRun = false, tags = {
-				"@Project" })
+				"@TC_quiz_03" })
 
 public class TestRunner extends TestBase {
 	private TestNGCucumberRunner testNGCucumberRunner; 
