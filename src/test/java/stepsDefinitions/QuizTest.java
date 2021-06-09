@@ -62,5 +62,19 @@ public void click_on_the_edit_option_for_the(String question) throws Interrupted
 }
 
 
+@When("click on the delete option for the {string}")
+public void click_on_the_delete_option_for_the(String question) throws InterruptedException {
+	String question1= p.getProperty(question);
+	Thread.sleep(3000);
+   quiz.selectQuizAndClickDeleteButton(question1);
+}
+
+@Then("The application should remove the question {string} of the list")
+public void the_application_should_remove_the_question_of_the_list(String question) {
+	String question1= p.getProperty(question);
+	quiz.assertTheQuizIsRemovedCorrectly(question1);
+}
+
+
 
 }

@@ -44,7 +44,7 @@ public class ProjectTest extends TestBase{
 	@Then("The application should show a {string} to the user")
 	public void the_application_should_show_a_to_the_user(String message) throws InterruptedException {
 		String projectMessage= p.getProperty(message);
-		  Thread.sleep(1000);
+		 Thread.sleep(1000);
 	    project.assertTheApplicationShowAMessage(projectMessage);
 	}
 	

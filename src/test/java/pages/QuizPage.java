@@ -49,6 +49,11 @@ public class QuizPage {
 				Common.elementIsPresentOnTheTable(question, "//*[@id=\"quiztable\"]/div[2]/table/tbody", driver), true);
 
 	}
+	
+	public void assertTheQuizIsRemovedCorrectly(String question) {
+		Assert.assertEquals(Common.elementIsPresentOnTheTable( question,"//*[@id=\"quiztable\"]/div[2]/table/tbody",  driver), false);
+		
+	}
 
 	public void selectQuizAndClickEditButton(String question) {
 		Common.searchElementOnTheTableAndClickOnTheButton(question, "editTable",
@@ -82,17 +87,15 @@ public class QuizPage {
 
 	}
 
-	public void editQuizData(String question, String clasification) {
+	public void editQuizData(String question, String clasification) throws InterruptedException {
 			clearDropDown.click();
 			clasificationDropDown.click();
+			Thread.sleep(1000);
 		List<WebElement> dropDownItems = driver.findElements(By.className("clasification-item"));
 		for (WebElement item : dropDownItems) {
 			System.out.println(item.getText());
 			if (item.getText().equals(clasification)) {
-				
 					item.click();
-				
-			
 				break;
 			}
 

@@ -38,7 +38,7 @@ Then The application should show a "<message>" to the user
 Then The application should show the question "<newQuestion>" on the list 
 
 Examples: 
-    |question  |newQuestion |clasificationName   |message     | 
+    |question  |newQuestion |newClasificationName|message     | 
     |question3 | question4  | clasificationName6 |massageQuiz2|
       
       
@@ -46,12 +46,11 @@ Examples:
 Scenario Outline: Remove quiz 
 Given: open the application on the browser
 When click on the quiz option
-And select the "<question>"
-And click on the remove quiz button
+And click on the delete option for the "<question>"
 And click on the yes option
 Then The application should show a "<message>" to the user
 Then The application should remove the question "<question>" of the list
 
 Examples: 
       |question   | message    |
-      |questionId |massageQuiz3|
+      |question1  |massageQuiz3|
