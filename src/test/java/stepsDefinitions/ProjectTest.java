@@ -92,4 +92,10 @@ public class ProjectTest extends TestBase{
 		String projectName= p.getProperty(name);
 		project.assertTheProjectIsRemovedCorrectly(projectName);
 	}
+	
+	@Then("The application should show a error {string} to the user")
+	public void the_application_should_show_a_error_to_the_user(String message) {
+		String errorMessage= p.getProperty(message);
+		project.assertTheApplicationShowAErrorMessage(errorMessage);
+	}
 }

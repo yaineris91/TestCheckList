@@ -35,6 +35,9 @@ public class ProjectPage {
 	@FindBy(id = "toast")
 	private WebElement messageTest;
 	
+	@FindBy(id = "errorMessage")
+	private WebElement errorMessageTest;
+	
 	@FindBy(id = "yes1")
 	private WebElement yesOption;
 	
@@ -51,6 +54,12 @@ public class ProjectPage {
 	
 	public void assertTheApplicationShowAMessage(String message) {
 		String text=messageTest.getText();
+		Assert.assertEquals( text.contains(message), true);
+		
+	}
+	
+	public void assertTheApplicationShowAErrorMessage(String message) {
+		String text=errorMessageTest.getText();
 		Assert.assertEquals( text.contains(message), true);
 		
 	}
