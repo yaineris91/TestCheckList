@@ -16,4 +16,5 @@ public class HomeTest extends TestBase {
 	public void the_application_should_be_open_on_the_Home_page() {
 	    home.assertHomeText();
 	}
+	
 }
