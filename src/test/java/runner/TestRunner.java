@@ -13,7 +13,6 @@ import io.cucumber.testng.PickleEventWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
 import utils.TestBase;
 
-
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src//test//java//features", glue = { "stepsDefinitions", "utils" }, plugin = {
 		"html:target/site/cucumber-pretty","json:target/cucumber.json"}, monochrome = true, strict = true, dryRun = false, tags = {

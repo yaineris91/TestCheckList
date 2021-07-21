@@ -1,0 +1,86 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-21T17:45:44.486Z",
+        "before": [
+          {
+            "result": {
+              "duration": 882200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ServiceHooks.setUpTest()"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "Open Home page",
+        "description": "Given: open the application on the browser",
+        "id": "home-page;open-home-page",
+        "after": [
+          {
+            "result": {
+              "duration": 7207000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ServiceHooks.endTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 86096600,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "The application should be open on the Home page",
+            "match": {
+              "location": "HomeTest.the_application_should_be_open_on_the_Home_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@All"
+          },
+          {
+            "name": "@Home"
+          },
+          {
+            "name": "@TC_home_01"
+          }
+        ]
+      }
+    ],
+    "name": "Home page",
+    "description": "",
+    "id": "home-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/Home.feature",
+    "tags": [
+      {
+        "name": "@All",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 1
+        }
+      },
+      {
+        "name": "@Home",
+        "type": "Tag",
+        "location": {
+          "line": 3,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
