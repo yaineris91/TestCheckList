@@ -28,7 +28,7 @@ public class TestBase {
 	public void createAndStartService() throws IOException {
 
 		if (BROWSER.equalsIgnoreCase("Chrome")) {
-
+			 System.setProperty("webdriver.chrome.whitelistedIps", "");
 			WebDriverManager.chromedriver().version("91.0").setup();
 			ArrayList<String> optionsList = new ArrayList<String>();
 			chromeOptions = new ChromeOptions();
