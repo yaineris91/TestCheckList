@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
@@ -43,7 +43,10 @@ public class TestBase {
 
 		} else if (BROWSER.equalsIgnoreCase("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxOptions options= new FirefoxOptions();
+			options.setAcceptInsecureCerts(true);
+			driver = new FirefoxDriver(options);
+			
 
 		} else if (BROWSER.equalsIgnoreCase("Safari")) {
 			SafariOptions options = new SafariOptions();
