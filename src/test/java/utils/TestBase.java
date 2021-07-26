@@ -29,7 +29,7 @@ public class TestBase {
 
 		if (BROWSER.equalsIgnoreCase("Chrome")) {
 			 System.setProperty("webdriver.chrome.whitelistedIps", "192.168.1.13");
-			WebDriverManager.chromedriver().version("92.0").setup();
+			WebDriverManager.chromedriver().version("92.0.4515.43").setup();
 			ArrayList<String> optionsList = new ArrayList<String>();
 			chromeOptions = new ChromeOptions();
 			optionsList.add("--start-maximized");
