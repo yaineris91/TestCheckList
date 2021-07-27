@@ -29,7 +29,7 @@ public class TestBase {
 
 		if (BROWSER.equalsIgnoreCase("Chrome")) {
 			 System.setProperty("webdriver.chrome.whitelistedIps", "192.168.1.13");
-			WebDriverManager.chromedriver().version("92.0.4515.43").setup();
+			WebDriverManager.chromedriver().version("92.0").setup();
 			ArrayList<String> optionsList = new ArrayList<String>();
 			chromeOptions = new ChromeOptions();
 			optionsList.add("--start-maximized");
@@ -43,14 +43,7 @@ public class TestBase {
 
 		} else if (BROWSER.equalsIgnoreCase("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			FirefoxOptions options= new FirefoxOptions();
-			options.setAcceptInsecureCerts(true);
-		    options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		    options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-		    options.setCapability(CapabilityType.SUPPORTS_ALERTS, true);
-		    options.setAcceptInsecureCerts(true);
-		    options.setCapability(FirefoxDriver.MARIONETTE, false);
-			driver = new FirefoxDriver(options);
+			driver = new FirefoxDriver();
 			
 
 		} else if (BROWSER.equalsIgnoreCase("Safari")) {
