@@ -49,6 +49,7 @@ public class TestBase {
 		    options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
 		    options.setCapability(CapabilityType.SUPPORTS_ALERTS, true);
 		    options.setAcceptInsecureCerts(true);
+		    options.setCapability(FirefoxDriver.MARIONETTE, false);
 			driver = new FirefoxDriver(options);
 			
 
